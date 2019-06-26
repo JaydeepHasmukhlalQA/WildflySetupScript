@@ -1,0 +1,10 @@
+[Unit]
+Description=Wildfly
+
+[Service]
+User=wildfly
+WorkingDirectory=/home/wildfly
+ExecStart=/home/wildfly/bin/standalone.sh
+
+[Install]
+WantedBy=multi-user.target
