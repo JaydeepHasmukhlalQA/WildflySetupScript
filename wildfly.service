@@ -4,7 +4,7 @@ Description=Wildfly
 [Service]
 User=wildfly
 WorkingDirectory=/home/wildfly
-ExecStart=/home/wildfly/bin/standalone.sh
+ExecStart=/home/wildfly/bin/standalone.sh -b=0.0.0.0
 
 [Install]
 WantedBy=multi-user.target
