@@ -3,8 +3,8 @@ Description=Wildfly
 
 [Service]
 User=wildfly
-WorkingDirectory=/home/wildfly
-ExecStart=/home/wildfly/bin/standalone -b=0.0.0.0
+WorkingDirectory=/home/wildfly/
+ExecStart=/home/wildfly/wildflyFinal/bin/standalone -b=0.0.0.0
 
 [Install]
 WantedBy=multi-user.target
