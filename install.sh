@@ -13,7 +13,7 @@ echo -e "${GREEN} Extracting Wildfly"
 sudo tar -xvf wildfly-17.0.0.Final.tar.gz
 sudo rm -f wildfly-17.0.0.Final.tar.gz
 
-sudo mv ./wildfly-17.0.0.Final /home/wildflyFinal
+sudo mv ./wildfly-17.0.0.Final /home/wildfly/wildflyFinal
 
 echo -e "${GREEN} Installing Wildfly Service Script"
 sudo cp ./wildfly.service /etc/systemd/system/
