@@ -19,6 +19,7 @@ do
 
         case $userinput in
                 1)
+                ./install_plugin.sh
                 ./install.sh ;;
 
 		2)
@@ -28,19 +29,15 @@ do
                 ./uninstall.sh ;;
 
                 4)
-                echo "Starting Wildfly \n"
-                sudo systemctl start wildfly
-                ;;
+                ./start.sh ;;
 
                 5)
-                echo "Stopping Wildfly \n"
-                sudo systemctl stop wildfly
-                ;;
+                ./stop.sh ;;
 
                 6)
                 echo "Restarting Wildfly..."
                 sudo systemctl restart wildfly
-                echo "Done \n"
+                echo "Done"
                 ;;
 
                 7)
@@ -54,7 +51,7 @@ do
                 ;;
 
                 9)
-		echo "Cya \n"
+		echo "Cya"
 		exit
 		;;
         esac

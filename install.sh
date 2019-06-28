@@ -1,30 +1,17 @@
 #!/bin/bash
 
-echo "Would you like to install JDK/JRE? [y/n]"
-read installjava
-
-if [ $installjava = "y" ]
-then
-        echo "Installing JDK/JRE \n"
-        sudo apt install -y wget openjdk-8-jdk openjdk-8-jre
-fi
-
-wildflyDownloadLink="https://download.jboss.org/wildfly/17.0.0.Final/wildfly-17.0.0.Final.tar.gz"
-wildflyTarName="wildfly-17.0.0.Final.tar.gz"
-wildflyFolderName="wildfly-17.0.0.Final"
-
-echo "Creating Wildfly User \n"
+echo "Creating Wildfly User"
 sudo useradd --create-home wildfly
 sudo usermod --shell /bin/bash wildfly
 
-echo "Downloading Wildfly \n"
-sudo wget $wildflyDownloadLink
-tar -xf $wildflyTarName
+echo "Downloading Wildfly"
+sudo wget https://download.jboss.org/wildfly/17.0.0.Final/wildfly-17.0.0.Final.tar.gz
+sudo tar -xvf wildfly-17.0.0.Final.tar.gz
+sudo rm -f wildfly-17.0.0.Final.tar.gz
 
-sudo mv ./$wildflyFolderName /home/wildfly
-sudo rm $wildflyTarName
+sudo mv ./wildfly-17.0.0.Final /home/wildfly
 
-echo "Installing Wildfly Service Script \n"
+echo "Installing Wildfly Service Script"
 sudo cp ./wildfly.service /etc/systemd/system/
 sudo systemctl daemon-reload
-echo "Finished Installing Wildfly \n"
+echo "Finished Installing Wildfly"
